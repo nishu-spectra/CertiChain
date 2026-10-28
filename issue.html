@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Issue Certificate | CertiChain</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html">⬡ CertiChain</a>
+      <nav>
+        <a href="dashboard.html">Dashboard</a><a href="verify.html">Verify</a
+        ><button class="small-btn" onclick="connectWallet()">
+          Connect wallet
+        </button>
+      </nav>
+    </header>
+    <main class="content-wrap">
+      <div class="page-heading">
+        <div>
+          <span class="eyebrow">ISSUER WORKSPACE</span>
+          <h1>Issue a certificate</h1>
+          <p class="muted">
+            Store a minimal certificate record on your local blockchain.
+          </p>
+        </div>
+      </div>
+      <section class="panel form-panel">
+        <div class="form-grid">
+          <label
+            >Student full name<input
+              id="studentName"
+              placeholder="e.g. Riya Sharma"
+              required /></label
+          ><label
+            >Course / programme<input
+              id="course"
+              placeholder="e.g. BSc Computer Science"
+              required /></label
+          ><label
+            >Student ID / roll number<input
+              id="rollNo"
+              placeholder="e.g. 2021CS001"
+              required /></label
+          ><label>Issue date<input id="issueDate" type="date" required /></label
+          ><label class="span-two"
+            >Certificate ID<input
+              id="certId"
+              placeholder="e.g. ABC-2026-001"
+              required
+          /></label>
+        </div>
+        <p class="notice">
+          Privacy note: do not put sensitive personal data or the PDF itself on
+          a public blockchain. This demo stores names/course/roll number
+          on-chain for learning only. Prefer storing a document hash and minimal
+          metadata.
+        </p>
+        <button class="btn" onclick="issueCertificate()">
+          Issue on blockchain
+        </button>
+        <p id="message" class="message"></p>
+        <p class="muted">
+          Requires MetaMask, a deployed contract address, and the local Ganache
+          network.
+        </p>
+      </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.4/ethers.umd.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

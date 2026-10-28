@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Dashboard | CertiChain</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html">⬡ CertiChain</a>
+      <nav>
+        <a href="index.html">Home</a><a href="issue.html">Issue</a
+        ><a href="verify.html">Verify</a
+        ><button class="small-btn" onclick="connectWallet()">
+          Connect wallet
+        </button>
+      </nav>
+    </header>
+    <main class="dashboard">
+      <aside class="sidebar">
+        <b>INSTITUTION</b><a class="active" href="dashboard.html">▦ Dashboard</a
+        ><a href="issue.html">＋ Issue certificate</a
+        ><a href="verify.html">⌕ Verify certificate</a
+        ><a href="explorer.html">⬡ Blockchain explorer</a
+        ><button class="small-btn" onclick="logoutInstitution()">
+          Log out
+        </button>
+      </aside>
+      <section class="dash-content">
+        <div class="page-heading">
+          <div>
+            <span class="eyebrow">OVERVIEW</span>
+            <h1>Dashboard</h1>
+            <p class="muted">
+              Signed in as
+              <strong id="institutionName">your institution</strong>. Manage
+              academic credentials from one place.
+            </p>
+          </div>
+          <a class="btn" href="issue.html">＋ Issue certificate</a>
+        </div>
+        <div class="stats">
+          <article class="stat">
+            <span>Total certificates</span><strong id="totalCount">—</strong
+            ><small>Read from connected contract</small>
+          </article>
+          <article class="stat">
+            <span>Wallet status</span
+            ><strong id="walletStatus">Not connected</strong
+            ><small id="walletAddress">Connect MetaMask to begin</small>
+          </article>
+          <article class="stat">
+            <span>Network</span><strong id="networkStatus">Not detected</strong
+            ><small>Use your local Ganache chain</small>
+          </article>
+        </div>
+        <section class="panel">
+          <h2>Quick actions</h2>
+          <div class="quick-actions">
+            <a href="issue.html">Issue a certificate →</a
+            ><a href="verify.html">Verify a certificate →</a
+            ><a href="explorer.html">Browse records →</a>
+          </div>
+          <p class="notice">
+            This is a learning scaffold. Institution roles and login security
+            must be enforced by the smart contract and a secure backend before
+            deployment.
+          </p>
+        </section>
+        <section class="panel certificate-list-panel">
+          <div class="page-heading">
+            <div>
+              <h2>Certificates issued by this wallet</h2>
+              <p class="muted">
+                This list is filtered by the connected MetaMask issuer wallet.
+              </p>
+            </div>
+            <button class="small-btn" onclick="loadMyCertificates()">
+              Refresh list
+            </button>
+          </div>
+          <div class="table-scroll">
+            <table class="certificate-table">
+              <thead>
+                <tr>
+                  <th>Certificate ID</th>
+                  <th>Student</th>
+                  <th>Course</th>
+                  <th>Roll number</th>
+                  <th>Issue date</th>
+                </tr>
+              </thead>
+              <tbody id="myCertificatesBody">
+                <tr>
+                  <td colspan="5">Connect MetaMask to load certificates.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.4/ethers.umd.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

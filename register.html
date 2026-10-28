@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Register Institution | CertiChain</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="auth-page">
+    <header class="topbar">
+      <a class="brand" href="index.html">⬡ CertiChain</a>
+      <nav><a href="index.html">Home</a><a href="verify.html">Verify</a></nav>
+    </header>
+    <main class="auth-wrap">
+      <section class="panel auth-card wide">
+        <div class="brand-mark">⬡</div>
+        <h1>Register institution</h1>
+        <p class="muted">
+          Create an institution account. New registrations require administrator
+          approval before login.
+        </p>
+        <form id="registerForm">
+          <label
+            >Institution name<input
+              id="institution"
+              name="institution_name"
+              autocomplete="organization"
+              minlength="3"
+              maxlength="180"
+              required /></label
+          ><label
+            >Contact number<input
+              id="contact"
+              name="contact"
+              type="tel"
+              autocomplete="tel"
+              maxlength="30"
+              placeholder="e.g. +977 98XXXXXXXX"
+              required /></label
+          ><label
+            >Official email<input
+              id="regEmail"
+              name="email"
+              type="email"
+              autocomplete="email"
+              maxlength="254"
+              required /></label
+          ><label
+            >Institution wallet address <span class="muted">(optional)</span
+            ><input
+              id="wallet"
+              name="wallet_address"
+              placeholder="0x…"
+              autocomplete="off"
+              pattern="0x[a-fA-F0-9]{40}" /></label
+          ><label
+            >Create password
+            <div class="password-wrapper">
+              <input
+                id="regPassword"
+                name="password"
+                type="password"
+                minlength="12"
+                maxlength="200"
+                autocomplete="new-password"
+                required
+              /><button
+                type="button"
+                class="password-toggle"
+                onclick="togglePassword('regPassword', this)"
+                aria-label="Show password"
+              >
+                Show
+              </button>
+            </div>
+            <small class="muted">Use at least 12 characters.</small></label
+          ><button class="btn full" type="submit">Submit registration</button>
+        </form>
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+        <p class="muted center">
+          Already registered? <a href="login.html">Login</a>
+        </p>
+      </section>
+    </main>
+    <script src="js/app.js"></script>
+  </body>
+</html>

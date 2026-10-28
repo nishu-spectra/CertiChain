@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Verify Certificate | CertiChain</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html">⬡ CertiChain</a>
+      <nav>
+        <a href="index.html">Home</a><a href="login.html">Login</a
+        ><a href="register.html">Register</a>
+      </nav>
+    </header>
+    <main class="verify-wrap">
+      <section class="verify-hero">
+        <span class="eyebrow">PUBLIC VERIFICATION</span>
+        <h1>Verify an academic certificate</h1>
+        <p>Enter the certificate ID to check its blockchain record.</p>
+        <div class="search-row">
+          <input
+            id="verifyId"
+            placeholder="Enter certificate ID (e.g. ABC-2026-001)"
+          /><button class="btn" onclick="verifyCertificate()">Verify</button>
+        </div>
+        <p id="message" class="message"></p>
+      </section>
+      <section id="result" class="panel result-panel hidden"></section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.4/ethers.umd.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
